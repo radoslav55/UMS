@@ -1,0 +1,89 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+    background: #456;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content {
+    width: 100%;
+    margin: 40px auto;
+    font-size: 16px;
+}
+
+/* Reset top and bottom margins from certain elements */
+.content-header,
+.content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.content-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.content-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+.content-container .badge-element{
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.content p {
+    padding: 12px;
+}
+
+.content input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.content input[type="email"],
+.content input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/* Text fields' focus effect */
+.content input[type="email"]:focus,
+.content input[type="password"]:focus {
+    border-color: #888;
+}
+
+.content input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content input[type="submit"]:hover {
+    background: #17c;
+}
+
+/* Buttons' focus effect */
+.content input[type="submit"]:focus {
+    border-color: #05a;
+}

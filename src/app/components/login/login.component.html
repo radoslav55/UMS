@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+
+        <div class="content">
+
+            <h2 class="content-header">Log in</h2>
+
+            <form #f="ngForm" name="form" class="content-container" (ngSubmit)="login()">
+                <p><input type="text" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required></p>
+                <p><input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required></p>
+                <p><input type="submit" value="Log in"></p>
+
+                <div *ngIf="authMessage" class="alert alert-{{ authMessage.status }}">
+                    {{ authMessage.msg }}
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bootsnipp2login -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9155049400353686"
+     data-ad-slot="6460533058"
+     data-ad-format="auto"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

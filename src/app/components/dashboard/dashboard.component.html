@@ -1,0 +1,78 @@
+
+<div class="content">
+
+    <h2 class="content-header">Dashboard</h2>
+
+    <div class="content-container">
+        <h4>Users</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Display Name</th>
+                <th colspan="2">Roles</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+                <td>
+                    {{ user.uuid }}
+                </td>
+                <td>
+                    {{ user.displayName }}
+                </td>
+                <td>
+                    <h6 *ngFor="let role of user.roles" class="badge-element">
+                        <span class="badge badge-success" >{{ role.name }}</span>
+                        <span class="badge badge-danger remove-role" (click)="removeRole(user, role)"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </h6>
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="addRole(user)">Add Roles</button>
+                </td>
+                <td>
+                    {{ user.status == 1 ? 'Active' : 'Disabled' }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="roleSelectorModal" tabindex="-1" role="dialog" aria-labelledby="roleSelectorModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Select the roles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group" data-toggle="buttons" *ngIf="currUser">
+                    <label class="btn btn-secondary" *ngFor="let role of roles" [attr.roleId]="role.uuid" [class.disabled]="userService.hasUserRole(currUser, role.uuid)" >
+                        <input type="checkbox" autocomplete="off" [disabled]="userService.hasUserRole(currUser, role.uuid)">{{ role.name }}
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addRoles()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bootsnipp2login -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9155049400353686"
+     data-ad-slot="6460533058"
+     data-ad-format="auto"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
